@@ -5,7 +5,7 @@ pipeline {
         MAVEN_IMAGE_NAME = 'mymaven'
         TOMCAT_IMAGE_NAME = 'mytomcat'
         TEST_LOCAL_PORT = 8888
-	DOCKERHUB_CREDS = credentials('dockerhub')
+	DOCKERHUB_CREDS = credentials('4ed339a3-fc04-47f3-ba0a-5e7e3931978d')
     }
 
     parameters {
