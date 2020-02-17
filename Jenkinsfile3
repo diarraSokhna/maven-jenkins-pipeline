@@ -47,7 +47,7 @@ pipeline {
    sh "docker run --rm -d -v /home/stagiaire/.m2/repository/com/mycompany/app/training-webapp/1.0-SNAPSHOT/:/usr/local/tomcat/webapps/ -p ${TEST_LOCAL_PORT}:8080 --name maven-webapp ${TOMCAT_IMAGE_NAME}:${DOCKER_TAG}"
    }
    }
-/Version 1
+//Version 1 avec mot de passe github en clair sur jenkins
 stage('Push Images To DockerHUb') {
     steps {
    echo "Login to Docker HUB"
@@ -61,7 +61,7 @@ stage('Push Images To DockerHUb') {
    }
    }
 
-//Version 2
+//Version 2 avec conf des crédentials github sur jenkins
 environment {
         DOCKERHUB_CREDS = credentials('dockerhub')
       }
