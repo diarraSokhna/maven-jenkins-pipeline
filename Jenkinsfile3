@@ -5,6 +5,7 @@ pipeline {
         MAVEN_IMAGE_NAME = 'mymaven'
         TOMCAT_IMAGE_NAME = 'mytomcat'
         TEST_LOCAL_PORT = 8888
+	DOCKERHUB_CREDS = credentials('dockerhub')
     }
 
     parameters {
@@ -62,9 +63,6 @@ stage('Push Images To DockerHUb') {
    }
 
 //Version 2 avec conf des crédentials github sur jenkins
-environment {
-        DOCKERHUB_CREDS = credentials('dockerhub')
-      }
 	  
 stage('Push Images To DockerHUb') {
     steps {
