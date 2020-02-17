@@ -49,7 +49,7 @@ pipeline {
    }
    }
 //Version 1 avec mot de passe github en clair sur jenkins
-stage('Push Images To DockerHUb') {
+stage('Push Images To DockerHUb v1') {
     steps {
    echo "Login to Docker HUB"
    sh "docker login -u ${DOCKER_USR} -p ${DOCKER_PSW}"
@@ -64,7 +64,7 @@ stage('Push Images To DockerHUb') {
 
 //Version 2 avec conf des crédentials github sur jenkins
 	  
-stage('Push Images To DockerHUb') {
+stage('Push Images To DockerHUb v2') {
     steps {
    echo "Login to Docker HUB"
    sh "docker login --username $DOCKERHUB_CREDS_USR --password $DOCKERHUB_CREDS_PSW"
