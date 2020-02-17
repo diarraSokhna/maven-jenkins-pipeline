@@ -53,8 +53,6 @@ stage('Push to docker hub') {
       // Run the tomcat deploy
    echo "Push images to docker hub"
    sh "docker login --username=${TDOCKER_USR}  --email=${DOCKER_PSW}"
-   mavenImage = MAVEN_IMAGE_NAME
-   tomcatImage = TOMCAT_IMAGE_NAME
    sh "docker tag ${MAVEN_IMAGE_NAME}:${DOCKER_TAG} sokhna05/mymaven:${DOCKER_TAG}" 
    sh "docker push sokhna05/mymaven:${DOCKER_TAG}"
      }
